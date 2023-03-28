@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Mar-2023 às 14:43
+-- Tempo de geração: 28-Mar-2023 às 13:29
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -29,11 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comidas` (
   `ID` int(11) NOT NULL,
-  `Tacos` int(250) NOT NULL COMMENT 'tacos muito legais',
-  `Quesadilha` int(250) NOT NULL COMMENT 'quesadilhas são ótimas',
-  `Burrito` int(200) NOT NULL COMMENT 'eu adoro burritos',
-  `Nachos` int(200) NOT NULL COMMENT 'humm que delícia'
+  `Nome` varchar(100) NOT NULL,
+  `Descricao` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `comidas`
+--
+
+INSERT INTO `comidas` (`ID`, `Nome`, `Descricao`) VALUES
+(1, 'Tacos', 'Amo muito tacos\r\n'),
+(2, 'Quesadilhas', 'Quesadilhas são muito boas'),
+(3, 'Burritos', 'Burritos são gostosos');
 
 --
 -- Índices para tabelas despejadas
@@ -53,7 +60,7 @@ ALTER TABLE `comidas`
 -- AUTO_INCREMENT de tabela `comidas`
 --
 ALTER TABLE `comidas`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
